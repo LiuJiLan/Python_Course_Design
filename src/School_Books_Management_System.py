@@ -27,7 +27,12 @@ def run_software():
     screen.geometry("{}x{}".format(sbms_settings.screen_width, sbms_settings.screen_height))
     screen.configure(bg=sbms_settings.screen_bg_color)
 
-    # 主循环
+    Page01(screen, sbms_settings)
+
+
+
+
+    # 开始运行
     screen.mainloop()
 
 
