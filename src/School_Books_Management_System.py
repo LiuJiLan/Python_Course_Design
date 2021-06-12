@@ -3,8 +3,6 @@ import tkinter
 from settings import Settings
 
 from page01 import Page01
-from page02 import Page02
-from page03 import Page03
 from page04 import Page04
 from page05 import Page05
 from page06 import Page06

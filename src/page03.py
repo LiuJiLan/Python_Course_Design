@@ -2,5 +2,9 @@ import tkinter
 
 
 class Page03:
-    def __init__(self):
-        pass
+    def __init__(self, screen, settings):
+        self.screen = screen
+        self.frame = tkinter.Frame(self.screen)
+
+        self.screen.title(settings.page03_title)
+        self.frame.pack()
