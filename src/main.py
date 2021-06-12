@@ -1,16 +1,46 @@
-# 这是一个示例 Python 脚本。
+import tkinter
 
-# 按 ⌃R 执行或将其替换为您的代码。
-# 按 双击 ⇧ 在所有地方搜索类、文件、工具窗口、操作和设置。
+# 页面转跳测试
+class page1():
+    def __init__(self, screen):
+        self.screen = screen
+        self.frame = tkinter.Frame(self.screen)
+
+        # 测试加载
+        self.screen.title("Page 1")
+        self.screen.geometry('500x300')
+        self.frame.pack()
+
+        btn = tkinter.Button(self.frame, text='change', command=self.change)
+        btn.pack()
+
+    def change(self, ):
+        self.frame.destroy()
+        page2(self.screen)
 
 
-def print_hi(name):
-    # 在下面的代码行中使用断点来调试脚本。
-    print(f'Hi, {name}')  # 按 ⌘F8 切换断点。
+class page2():
+    def __init__(self, screen):
+        self.screen = screen
+        self.frame = tkinter.Frame(self.screen)
+
+        # 测试加载
+        self.screen.title("Page 2")
+        self.screen.geometry('500x300')
+        self.frame.pack()
+
+        e1 = tkinter.Entry(self.frame, show='*', font=('Arial', 14))  # 显示成密文形式
+        e2 = tkinter.Entry(self.frame, show=None, font=('Arial', 14))  # 显示成明文形式
+        e1.pack()
+        e2.pack()
 
 
-# 按间距中的绿色按钮以运行脚本。
+def run_software():
+    # 初始化各种需要用的元素
+    windows = tkinter.Tk()
+    page1(windows)
+    windows.mainloop()
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# 访问 https://www.jetbrains.com/help/pycharm/ 获取 PyCharm 帮助
+    run_software()
