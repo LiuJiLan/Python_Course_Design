@@ -1,5 +1,7 @@
 import tkinter
 
+from settings import Settings
+
 from page01 import Page01
 from page02 import Page02
 from page03 import Page03
@@ -17,8 +19,17 @@ from pagexx import Pagexx
 
 def run_software():
     # 初始化各种需要用的元素
-    windows = tkinter.Tk()
-    windows.mainloop()
+    screen = tkinter.Tk()
+    sbms_settings = Settings()
+
+    # 主screen的各种设置加载
+    screen.title(sbms_settings.screen_title)
+    screen.geometry("{}x{}".format(sbms_settings.screen_width, sbms_settings.screen_height))
+    screen.configure(bg = sbms_settings.screen_bg_color)
+
+
+    # 主循环
+    screen.mainloop()
 
 
 if __name__ == '__main__':
