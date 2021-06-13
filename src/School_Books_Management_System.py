@@ -27,9 +27,6 @@ def run_software():
 
     Page01(screen, sbms_settings)
 
-
-
-
     # 开始运行
     screen.mainloop()
 
