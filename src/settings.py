@@ -14,6 +14,6 @@ class Settings:
         # page01的部分设置
         self.page01_license_url = "http://www.reinstall.cn/SomeAssets/ExampleLincense.txt"
         # page02部分设置
-        self.page02_does_id_exist_message = "未查询到你的学号,请确认或联系管理员."
+        self.page03_does_id_exist_message = "未查询到你的学号,请确认或联系管理员."
 
 
