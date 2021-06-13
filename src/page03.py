@@ -1,4 +1,5 @@
 import tkinter
+import tkinter.ttk
 import tkinter.messagebox
 import db_functions as dbf
 
@@ -14,26 +15,28 @@ class Page03:
         # 所有的控件
         labelId = tkinter.Label(self.frame, text="学工号:")
         self.entryId = tkinter.Entry(self.frame, show=None)
-        labelPassword = tkinter.Label(self.frame, text="密码:")
-        self.entryPassword = tkinter.Entry(self.frame, show="*")
-        buttonSignIn = tkinter.Button(self.frame, text="登录", command=self.handle_sign_in)
+        labelIdentity = tkinter.Label(self.frame, text="身份:")
+        self.comboboxIdentity = tkinter.ttk.Combobox(self.frame)
+        buttonGoNext = tkinter.Button(self.frame, text="下一步", command=self.go_next)
         buttonGoBack = tkinter.Button(self.frame, text="返回", command=self.go_back)
+
+        # 控件子设定
+        # # self.entryIdentity设定
+        self.comboboxIdentity["values"] = ["请选择身份", "管理员", "学生"]
+        self.comboboxIdentity["state"] = "readonly"
+        self.comboboxIdentity.current(0)
 
         # 暂定放置
         labelId.pack()
         self.entryId.pack()
-        labelPassword.pack()
-        self.entryPassword.pack()
-        buttonSignIn.pack()
+        labelIdentity.pack()
+        self.comboboxIdentity.pack()
+        buttonGoNext.pack()
         buttonGoBack.pack()
 
-    def handle_sign_in(self):
-        id = self.entryId.get()
-        password = self.entryPassword.get()
-        if dbf.page03_does_id_exist(id):
-            pass
-        else:
-            tkinter.messagebox.showinfo(title="对不起", message=self.settings.page03_does_id_exist_message)
+    def go_next(self):
+        test = self.comboboxIdentity.get()
+        tkinter.messagebox.showinfo(title="对不起", message=test)
 
     def go_back(self):
         pass
