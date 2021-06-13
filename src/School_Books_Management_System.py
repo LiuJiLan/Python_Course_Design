@@ -2,7 +2,7 @@ import tkinter
 
 from settings import Settings
 
-from page01 import Page01
+
 from page04 import Page04
 from page05 import Page05
 from page06 import Page06
@@ -25,7 +25,9 @@ def run_software():
     screen.geometry("{}x{}".format(sbms_settings.screen_width, sbms_settings.screen_height))
     screen.configure(bg=sbms_settings.screen_bg_color)
 
-    Page01(screen, sbms_settings)
+    from page01 import Page01
+    from page03 import Page03
+    Page03(screen, sbms_settings)
 
     # 开始运行
     screen.mainloop()
