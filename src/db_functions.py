@@ -5,3 +5,6 @@
 逻辑函数,相当于一个抽象的接口,屏蔽与SQL联系的细节
 """
 
+
+def page02_does_id_exist(id):
+    return False
