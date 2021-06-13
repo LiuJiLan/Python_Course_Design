@@ -2,9 +2,6 @@ import tkinter
 import os
 from urllib.request import urlopen
 
-from page02 import Page02
-from page03 import Page03
-
 
 class Page01:
     def __init__(self, screen, settings):
@@ -33,10 +30,12 @@ class Page01:
 
     def handle_sign_in(self):
         self.frame.destroy()
+        from page02 import Page02
         Page02(self.screen, self.settings)
 
     def handle_sign_up(self):
         self.frame.destroy()
+        from page03 import Page03
         Page03(self.screen, self.settings)
 
     def get_license(self):

@@ -2,10 +2,6 @@ import tkinter
 import tkinter.messagebox
 import db_functions as dbf
 
-from page01 import Page01
-from page05 import Page05
-from page08 import Page08
-
 
 class Page02:
     def __init__(self, screen, settings):
@@ -39,9 +35,11 @@ class Page02:
             if dbf.page02_is_pwd_correct(userName, password):
                 if dbf.page02_is_administrator(userName, password):
                     self.frame.destroy()
+                    from page08 import Page08
                     Page08(self.screen, self.settings)
                 else:
                     self.frame.destroy()
+                    from page05 import Page05
                     Page05(self.screen, self.settings)
             else:
                 tkinter.messagebox.showinfo(title="对不起", message=self.settings.page02_pwd_is_not_correct)
@@ -50,4 +48,5 @@ class Page02:
 
     def go_back(self):
         self.frame.destroy()
+        from page01 import Page01
         Page01(self.screen, self.settings)
