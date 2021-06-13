@@ -41,7 +41,7 @@ class Page01:
 
     def get_license(self):
         try:
-            url = "http://www.reinstall.cn/SomeAssets/ExampleLincense.txt"
+            url = self.settings.page01_license_url
             with urlopen(url) as (fp):
                 content = fp.read().decode()
             with open('lincense.txt', 'w', encoding='utf8') as (fp):
