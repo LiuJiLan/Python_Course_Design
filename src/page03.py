@@ -9,8 +9,9 @@ class Page03:
         self.frame = tkinter.Frame(self.screen)
 
         self.screen.title(settings.page03_title)
-        self.frame.pack()
+        self.frame.pack(fill="both")
 
+        # 所有的控件
         labelId = tkinter.Label(self.frame, text="学工号:")
         self.entryId = tkinter.Entry(self.frame, show=None)
         labelPassword = tkinter.Label(self.frame, text="密码:")

@@ -6,5 +6,17 @@
 """
 
 
+def page02_does_username_exist(userName):
+    return True
+
+
+def page02_is_pwd_correct(userName, password):
+    return True
+
+
+def page02_is_administrator(userName, password):
+    return True
+
+
 def page03_does_id_exist(id):
-    return False
+    return True
