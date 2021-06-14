@@ -4,10 +4,10 @@ import db_functions as dbf
 
 
 class Page02:
-    def __init__(self, screen, settings, info):
+    def __init__(self, screen, settings, data_package):
         self.screen = screen
         self.settings = settings
-        self.info = info
+        self.data_package = data_package
         self.frame = tkinter.Frame(self.screen)
 
         self.screen.title(settings.page02_title)

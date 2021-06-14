@@ -20,3 +20,10 @@ def page02_is_administrator(userName, password):
 
 def page03_does_id_exist(id):
     return True
+
+def page03_any_times_left(id):
+    return True
+
+def page03_any_times_identity_left(id, identity):
+    # identity为"管理员"或"学生"
+    return True

@@ -1,9 +1,9 @@
 import tkinter
 
-from settings import Settings
-from data_package import Package
 
 
+
+"""
 from page04 import Page04
 from page05 import Page05
 from page06 import Page06
@@ -14,9 +14,14 @@ from page10 import Page10
 from page11 import Page11
 from page12 import Page12
 from pagexx import Pagexx
+"""
 
 
 def run_software():
+    # 函数内导包
+    from settings import Settings
+    from data_package import Package
+
     # 初始化各种需要用的元素
     screen = tkinter.Tk()
     sbms_settings = Settings()

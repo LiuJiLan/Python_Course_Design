@@ -21,6 +21,7 @@ class Settings:
         self.page02_pwd_is_not_correct = "你的用户名或密码有误,请重试"
 
         # page03部分设置
-        self.page03_does_id_exist_message = "未查询到你的学号,请确认或联系管理员."
-
-
+        self.page03_combobox_not_selected = "请先选择身分"
+        self.page03_does_id_exist_message = "未查询到你的学工号,请确认或联系管理员."
+        self.page03_any_times_left_message = "输入的学工号已经达到创好上限,\n请使用登录功能.\n如仍需创号请联系管理员"
+        self.page03_any_times_identity_left_message = "尽管输入的学工号没有达到创好上限,但您不能再已此身份继续创号\n请使用登录功能.\n如仍需创号请联系管理员"

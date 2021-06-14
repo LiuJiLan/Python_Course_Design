@@ -3,11 +3,12 @@ import tkinter.ttk
 import tkinter.messagebox
 import db_functions as dbf
 
+
 class Page03:
-    def __init__(self, screen, settings, info):
+    def __init__(self, screen, settings, data_package):
         self.screen = screen
         self.settings = settings
-        self.info = info
+        self.data_package = data_package
         self.frame = tkinter.Frame(self.screen)
 
         self.screen.title(settings.page03_title)
@@ -36,8 +37,22 @@ class Page03:
         buttonGoBack.pack()
 
     def go_next(self):
-        test = self.comboboxIdentity.get()
-        tkinter.messagebox.showinfo(title="对不起", message=test)
+        userId = self.entryId.get()
+        combobox_return = self.comboboxIdentity.get()
+        if combobox_return == "请选择身份":
+            tkinter.messagebox.showinfo(title="对不起", message=self.settings.page03_combobox_not_selected)
+        else:
+            if dbf.page03_does_id_exist(userId):
+                if dbf.page03_any_times_left(userId):
+                    if dbf.page03_any_times_identity_left(userId, combobox_return):
+                        pass
+                    else:
+                        tkinter.messagebox.showinfo(title="对不起",
+                                                    message=self.settings.page03_any_times_identity_left_message)
+                else:
+                    tkinter.messagebox.showinfo(title="对不起", message=self.settings.page03_any_times_left_message)
+            else:
+                tkinter.messagebox.showinfo(title="对不起", message=self.settings.page03_does_id_exist_message)
 
     def go_back(self):
         pass
