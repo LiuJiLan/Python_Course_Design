@@ -1,5 +1,4 @@
 
-
 class Settings:
     def __init__(self):
         # 主screen设置
