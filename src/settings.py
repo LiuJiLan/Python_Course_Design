@@ -16,6 +16,11 @@ class Settings:
         self.page06_title = "Page 6"
         self.page07_title = "Page 7"
         self.page08_title = "Page 8"
+        self.page09_title = "Page 9"
+        self.page10_title = "Page 10"
+        self.page11_title = "Page 11"
+        self.page12_title = "Page 12"
+        self.pagexx_title = "Page xx"
 
         # page01设置
         self.page01_license_url = "http://www.reinstall.cn/SomeAssets/ExampleLincense.txt"
@@ -46,3 +51,7 @@ class Settings:
 
         # page07设置
 
+        # page08设置
+        # 输入 "True" "False"
+        self.page08_allow_test_functions = "False"
+        self.page08_do_not_allow_test_message = "测试功能未开启,\n请联系管理者或程序开发者"

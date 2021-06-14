@@ -104,7 +104,7 @@ class Package:
         :return:
         """
         # 此函数在page05和page08里公用
-        self.res = []
+        self.res = []  # 由于逻辑设计, 此处可以直接刷新
         if len(self.search_key_words) == 0:
             # 如果没有任何输入直接认为没有搜索结果
             pass
@@ -117,7 +117,7 @@ class Package:
 
     """
     def write_pic_2_temp(self):
-        # 此函数在page07和page09里公用
+        # 此函数在page07和page10里公用
         work_dir = os.getcwd()
         temp_dir = work_dir + "/temp"
         if not os.path.exists(temp_dir):
@@ -136,4 +136,8 @@ class Package:
         # 从服务器取得
         self.selected_book_info = ("他改变了中国：江泽民传", "美罗伯特•劳伦斯•库恩",
                                    "《他改变了中国：江泽民传》，2005年中文版、英文版全球同步发行。该书是一部人物传记，作者为美国作家罗伯特·劳伦斯·库恩（Robert Lawrence Kuhn），中文翻译本署名“谈峥，于海江等”。作者长期关注中国，关注江泽民，并向江泽民的亲属、好友及有关工作人员进行了深入细致的采访，掌握了大量第一手资料，在此基础上写成本书。")
+
+    def page08_get_all_from_db(self):
+        self.res = []  # 由于逻辑设计, 此处可以直接刷新
+        # 此函数不返回, 直接通过res来读取读取
 
