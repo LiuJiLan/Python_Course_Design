@@ -32,12 +32,12 @@ class Page01:
     def handle_sign_in(self):
         self.frame.destroy()
         from page02 import Page02
-        Page02(self.screen, self.settings, self.settings)
+        Page02(self.screen, self.settings, self.data_package)
 
     def handle_sign_up(self):
         self.frame.destroy()
         from page03 import Page03
-        Page03(self.screen, self.settings, self.settings)
+        Page03(self.screen, self.settings, self.data_package)
 
     def get_license(self):
         try:

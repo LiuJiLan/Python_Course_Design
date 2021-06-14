@@ -27,3 +27,13 @@ def page03_any_times_left(id):
 def page03_any_times_identity_left(id, identity):
     # identity为"管理员"或"学生"
     return True
+
+def page04_is_username_already_taken(userName):
+    return False
+
+def page04_is_pwd_valid(password):
+    return True
+
+def page04_complete_regist_action(userName, password, id, identity):
+    # 完成注册功能的函数
+    pass

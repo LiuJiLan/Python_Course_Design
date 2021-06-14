@@ -45,7 +45,11 @@ class Page03:
             if dbf.page03_does_id_exist(userId):
                 if dbf.page03_any_times_left(userId):
                     if dbf.page03_any_times_identity_left(userId, combobox_return):
-                        pass
+                        self.data_package.id = userId
+                        self.data_package.identity = combobox_return
+                        self.frame.destroy()
+                        from page04 import Page04
+                        Page04(self.screen, self.settings, self.data_package)
                     else:
                         tkinter.messagebox.showinfo(title="对不起",
                                                     message=self.settings.page03_any_times_identity_left_message)
@@ -55,4 +59,6 @@ class Page03:
                 tkinter.messagebox.showinfo(title="对不起", message=self.settings.page03_does_id_exist_message)
 
     def go_back(self):
-        pass
+        self.frame.destroy()
+        from page01 import Page01
+        Page01(self.screen, self.settings, self.data_package)
