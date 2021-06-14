@@ -1,6 +1,7 @@
 import tkinter
 
 from settings import Settings
+from user import User
 
 
 from page04 import Page04
@@ -19,6 +20,7 @@ def run_software():
     # 初始化各种需要用的元素
     screen = tkinter.Tk()
     sbms_settings = Settings()
+    user_info = User()
 
     # 主screen的各种设置加载
     screen.title(sbms_settings.screen_title)
@@ -27,7 +29,7 @@ def run_software():
 
     from page01 import Page01
     from page03 import Page03
-    Page03(screen, sbms_settings)
+    Page03(screen, sbms_settings, user_info)
 
     # 开始运行
     screen.mainloop()

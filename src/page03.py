@@ -4,9 +4,10 @@ import tkinter.messagebox
 import db_functions as dbf
 
 class Page03:
-    def __init__(self, screen, settings):
+    def __init__(self, screen, settings, info):
         self.screen = screen
         self.settings = settings
+        self.info = info
         self.frame = tkinter.Frame(self.screen)
 
         self.screen.title(settings.page03_title)

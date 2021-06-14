@@ -4,9 +4,10 @@ from urllib.request import urlopen
 
 
 class Page01:
-    def __init__(self, screen, settings):
+    def __init__(self, screen, settings, info):
         self.screen = screen
         self.settings = settings
+        self.info = info
         self.frame = tkinter.Frame(self.screen)
         # 如果frame之后不加任何多余注释则为主frame, 方便于之后的销毁
         # 之后不再注释
