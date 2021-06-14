@@ -1,16 +1,31 @@
 class Package:
     def __init__(self):
+        # 注册用信息
         self.id = ""  # 学工号
         self.authority = ""  # 选择的身份, 原为identity, 为放置与id弄混而重命名
         self.sign_up_pwd = ""  # 注册时的密码, 与登录时的密码进行区分
+
+        # 用户信息
         self.user_name = ""
         self.sign_in_pwd = ""
+        # 以后可以改进的地方, 操作时要调取用户信息看有没有权限
+
+        # 用于搜索与结果在列表中展示
         self.search_key_words = []
         """
         res中的项为一个元组, 元组中包含了书本的信息
-        ()
+        注意只包含三个信息:(UniqueCode(Key), BookName, Author)
+        内容的详见SQL设计
         """
-        self.res = []
+        self.res = [("1", "2", "3")]
+        self.last_visited_location = -1  # 用于记录上次访问的位置, 如为-1就不设置
+
+        self.selected_one = ""  # 记录选中的书的UniqueCode(Key)
+
+
+
+
+
 
     def page02_does_username_exist(self):
         """

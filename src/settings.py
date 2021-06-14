@@ -40,3 +40,6 @@ class Settings:
         # page05设置
         self.page05_get_0_res = "没有查找到相关信息.\n如有需要请咨询管理员"
 
+        # page06设置
+        self.page06_number_of_res_is_zero = "没有找到相关信息"
+        self.page06_no_location_selected_message = "请先选择一条项目"

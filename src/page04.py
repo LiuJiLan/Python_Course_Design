@@ -13,7 +13,7 @@ class Page04:
         self.frame.pack(fill="both")
 
         # 所有的控件
-        labeUserName = tkinter.Label(self.frame, text="用户名:")
+        labelUserName = tkinter.Label(self.frame, text="用户名:")
         self.entryUserName = tkinter.Entry(self.frame, show=None)
         labelPasswordTip = tkinter.Label(self.frame, text=self.settings.page04_password_tip)
         labelPassword = tkinter.Label(self.frame, text="密码:")
@@ -24,7 +24,7 @@ class Page04:
         buttonGoBack = tkinter.Button(self.frame, text="返回", command=self.go_back)
 
         # 暂定放置
-        labeUserName.pack()
+        labelUserName.pack()
         self.entryUserName.pack()
         labelPasswordTip.pack()
         labelPassword.pack()
