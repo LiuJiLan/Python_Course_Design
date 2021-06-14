@@ -33,8 +33,7 @@ def run_software():
     screen.configure(bg=sbms_settings.screen_bg_color)
 
     from page01 import Page01
-    from page04 import Page04
-    Page04(screen, sbms_settings, user_info)
+    Page01(screen, sbms_settings, user_info)
 
     # 开始运行
     screen.mainloop()

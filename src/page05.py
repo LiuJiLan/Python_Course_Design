@@ -1,5 +1,5 @@
 import tkinter
-
+import tkinter.messagebox
 
 class Page05:
     def __init__(self, screen, settings, data_package):
@@ -54,4 +54,10 @@ class Page05:
         但是python的list在删除时要copy以防止index错误
         所以我就这样写了, 一言蔽之就是懒
         """
-        pass
+        self.data_package.search_from_db()
+        if len(self.data_package.res) == 0:
+            tkinter.messagebox.showinfo(title="对不起", message=self.settings.page05_get_0_res)
+        else:
+            self.frame.destroy()
+            from page06 import Page06
+            Page06(self.screen, self.settings, self.data_package)

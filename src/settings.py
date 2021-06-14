@@ -36,3 +36,7 @@ class Settings:
         self.page04_pwd_is_valid_message = "恭喜您注册成功"
         self.page04_pwd_is_not_valid_message = "您输入的密码不合规,请重新输入"
         self.page04_inconsistent_passwords = "两次密码不一致"
+
+        # page05设置
+        self.page05_get_0_res = "没有查找到相关信息.\n如有需要请咨询管理员"
+
