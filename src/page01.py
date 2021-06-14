@@ -1,6 +1,7 @@
 import tkinter
-import os
 from urllib.request import urlopen
+from tkinter import filedialog
+import os
 
 
 class Page01:
@@ -44,8 +45,9 @@ class Page01:
             url = self.settings.page01_license_url
             with urlopen(url) as (fp):
                 content = fp.read().decode()
-            with open('lincense.txt', 'w', encoding='utf8') as (fp):
+            target_dir = filedialog.askdirectory()
+            os.chdir(target_dir)
+            with open("lincense.txt", 'w', encoding='utf8') as (fp):
                 fp.write(content)
-            os.startfile('lincense.txt')
         finally:
             pass
