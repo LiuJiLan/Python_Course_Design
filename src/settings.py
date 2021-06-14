@@ -43,3 +43,6 @@ class Settings:
         # page06设置
         self.page06_number_of_res_is_zero = "没有找到相关信息"
         self.page06_no_location_selected_message = "请先选择一条项目"
+
+        # page07设置
+
