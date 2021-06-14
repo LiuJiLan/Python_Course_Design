@@ -1,6 +1,5 @@
 import tkinter
 import tkinter.messagebox
-import db_functions as dbf
 
 
 class Page02:
@@ -30,11 +29,12 @@ class Page02:
         buttonGoBack.pack()
 
     def handle_sign_in(self):
-        userName = self.entryUserName.get()
-        password = self.entryPassword.get()
-        if dbf.page02_does_username_exist(userName):
-            if dbf.page02_is_pwd_correct(userName, password):
-                if dbf.page02_is_administrator(userName, password):
+        self.data_package.user_name = self.entryUserName.get()
+        self.data_package.sign_in_pwd = self.entryPassword.get()
+
+        if self.data_package.page02_does_username_exist():
+            if self.data_package.page02_is_pwd_correct():
+                if self.data_package.page02_is_administrator():
                     self.frame.destroy()
                     from page08 import Page08
                     Page08(self.screen, self.settings, self.data_package)

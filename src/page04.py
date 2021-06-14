@@ -1,6 +1,5 @@
 import tkinter
 import tkinter.messagebox
-import db_functions as dbf
 
 
 class Page04:
@@ -36,19 +35,18 @@ class Page04:
         buttonGoBack.pack()
 
     def handle_sign_up(self):
-        userName = self.entryUserName.get()
+        self.data_package.user_name = self.entryUserName.get()
         password = self.entryPassword.get()
         pwdConfirm = self.entryPwdConfirm.get()
-        if dbf.page04_is_username_already_taken(userName):
+        if self.data_package.page04_is_username_already_taken():
             tkinter.messagebox.showinfo(title="对不起", message=self.settings.page04_is_username_already_taken_message)
         else:
             if password == pwdConfirm:
-                if dbf.page04_is_pwd_valid(password):
-                    dbf.page04_complete_regist_action(userName, password, self.data_package.id,
-                                                      self.data_package.identity)
+                if self.is_pwd_valid():
+                    self.data_package.sign_up_pwd = password
+                    self.data_package.page04_complete_regist_action()
                     # 由于注册和登录是分开的, 注册中的信息用完即可销毁
-                    self.data_package.id = ""
-                    self.data_package.identity = ""
+                    # 此步骤已被移入self.data_package.page04_complete_regist_action()函数中
                     tkinter.messagebox.showinfo(title="谢谢", message=self.settings.page04_pwd_is_valid_message)
                     self.frame.destroy()
                     from page01 import Page01
@@ -62,3 +60,8 @@ class Page04:
         self.frame.destroy()
         from page03 import Page03
         Page03(self.screen, self.settings, self.data_package)
+
+    def is_pwd_valid(self):
+        pwd = self.entryPassword.get()
+        # 请组员对此内容进行补充
+        return True

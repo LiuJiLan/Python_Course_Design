@@ -12,6 +12,10 @@ class Settings:
         self.page02_title = "Page 2"
         self.page03_title = "Page 3"
         self.page04_title = "Page 4"
+        self.page05_title = "Page 5"
+        self.page06_title = "Page 6"
+        self.page07_title = "Page 7"
+        self.page08_title = "Page 8"
 
         # page01设置
         self.page01_license_url = "http://www.reinstall.cn/SomeAssets/ExampleLincense.txt"
