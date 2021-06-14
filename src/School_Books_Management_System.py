@@ -1,7 +1,7 @@
 import tkinter
 
 from settings import Settings
-from user import User
+from data_package import Package
 
 
 from page04 import Page04
@@ -20,7 +20,7 @@ def run_software():
     # 初始化各种需要用的元素
     screen = tkinter.Tk()
     sbms_settings = Settings()
-    user_info = User()
+    user_info = Package()
 
     # 主screen的各种设置加载
     screen.title(sbms_settings.screen_title)

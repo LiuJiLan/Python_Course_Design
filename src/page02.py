@@ -37,11 +37,11 @@ class Page02:
                 if dbf.page02_is_administrator(userName, password):
                     self.frame.destroy()
                     from page08 import Page08
-                    Page08(self.screen, self.settings)
+                    Page08(self.screen, self.settings, self.settings)
                 else:
                     self.frame.destroy()
                     from page05 import Page05
-                    Page05(self.screen, self.settings)
+                    Page05(self.screen, self.settings, self.settings)
             else:
                 tkinter.messagebox.showinfo(title="对不起", message=self.settings.page02_pwd_is_not_correct)
         else:
@@ -50,4 +50,4 @@ class Page02:
     def go_back(self):
         self.frame.destroy()
         from page01 import Page01
-        Page01(self.screen, self.settings)
+        Page01(self.screen, self.settings, self.settings)
