@@ -20,6 +20,8 @@ class Settings:
         self.page10_title = "Page 10"
         self.page11_title = "Page 11"
         self.page12_title = "Page 12"
+        self.page13_title = "Page 12"
+        self.page14_title = "Page 12"
         self.pagexx_title = "Page xx"
 
         # page01设置
@@ -60,3 +62,9 @@ class Settings:
         self.page09_there_no_result = "没有找到相关信息, 可以尝试先添加信息"
         self.page09_number_of_res_is_zero = self.page06_number_of_res_is_zero
         self.page09_no_location_selected_message = self.page06_no_location_selected_message
+
+        # page12设置
+        self.page12_finish_change = "已向服务器发送请求,\n重新加载列表以检查是否成功."
+
+        # page13设置
+        self.page13_finish_delete = "已向服务器发送请求,\n重新加载列表以检查是否成功."

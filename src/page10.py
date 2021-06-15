@@ -28,6 +28,7 @@ class Page10:
         # 控件子设定
         # # scrolledtextBriefIntro设定
         scrolledtextBriefIntro.insert(tkinter.END, self.data_package.selected_book_info[2])
+        scrolledtextBriefIntro.config(state="disable")
 
         # 暂定放置.pack()
         buttonSaveTextContent.pack()
@@ -46,9 +47,6 @@ class Page10:
                 fp.write(content)
         finally:
             pass
-
-    # def save_book_cover(self):
-    #    pass
 
     def go_back(self):
         self.frame.destroy()

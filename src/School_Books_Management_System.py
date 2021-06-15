@@ -32,8 +32,8 @@ def run_software():
     screen.geometry("{}x{}".format(sbms_settings.screen_width, sbms_settings.screen_height))
     screen.configure(bg=sbms_settings.screen_bg_color)
 
-    from page09 import Page09
-    Page09(screen, sbms_settings, user_info)
+    from page13 import Page13
+    Page13(screen, sbms_settings, user_info)
 
     # 开始运行
     screen.mainloop()

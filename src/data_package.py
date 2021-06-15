@@ -1,6 +1,5 @@
-import os
-import sys
-
+import datetime
+import random
 
 class Package:
     def __init__(self):
@@ -25,9 +24,49 @@ class Package:
         self.last_visited_location = -1  # 用于记录上次访问的位置, 如为-1就不设置
 
         # 具体到一本书
-        self.selected_one = ""  # 记录选中的书的UniqueCode(Key)
-        self.selected_book_info = ()
+        self.selected_one = ""  # 记录
+        self.selected_book_info = ("他改变了中国：江泽民传", "美罗伯特•劳伦斯•库恩",
+                                   "《他改变了中国：江泽民传》，2005年中文版、英文版全球同步发行。该书是一部人物传记，作者为美国作家罗伯特·劳伦斯·库恩（Robert Lawrence Kuhn），中文翻译本署名“谈峥，于海江等”。作者长期关注中国，关注江泽民，并向江泽民的亲属、好友及有关工作人员进行了深入细致的采访，掌握了大量第一手资料，在此基础上写成本书。")
         # (BookName, Author, BriefIntroduction)
+
+        # 新信息
+        self.new_one = ""  # 记录选中的书的UniqueCode(Key)
+        self.new_book_info = ("他改变了中国：江泽民传", "美罗伯特•劳伦斯•库恩",
+                                   "《他改变了中国：江泽民传》，2005年中文版、英文版全球同步发行。该书是一部人物传记，作者为美国作家罗伯特·劳伦斯·库恩（Robert Lawrence Kuhn），中文翻译本署名“谈峥，于海江等”。作者长期关注中国，关注江泽民，并向江泽民的亲属、好友及有关工作人员进行了深入细致的采访，掌握了大量第一手资料，在此基础上写成本书。")
+
+        # (BookName, Author, BriefIntroduction)
+
+    def generate_new_unique_code(self):
+        new_unique_code = datetime.datetime.now().strftime('%Y%m%d%H%M%S%f') + str(random.randint(0, 9))
+        return new_unique_code
+
+    """
+    create和delete中清除的部分应该放在外部
+        self.res = []
+        self.last_visited_location = -1
+        self.selected_one = ""
+        self.selected_book_info = ()
+        self.new_one = ""
+        self.new_book_info = ()
+        已经移到了self.`flush_self_variable()
+    """
+
+    def create_new_one(self):
+        # 注意这个函数不能清空old的内容
+        pass
+
+    def delete_old_one(self):
+        # ...服务器
+        pass
+
+    def flush_self_variable(self):
+        self.res = []
+        self.last_visited_location = -1
+        self.selected_one = ""
+        self.selected_book_info = ()
+        self.new_one = ""
+        self.new_book_info = ()
+
 
     def page02_does_username_exist(self):
         """
