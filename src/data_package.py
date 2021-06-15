@@ -37,7 +37,7 @@ class Package:
         # (BookName, Author, BriefIntroduction)
 
     def generate_new_unique_code(self):
-        new_unique_code = datetime.datetime.now().strftime('%Y%m%d%H%M%S%f') + str(random.randint(0, 9))
+        new_unique_code = datetime.datetime.now().strftime('%Y%m%d%H%M%S%f') + str(random.randint(0, 9) + str(random.randint(0, 9))
         return new_unique_code
 
     """
