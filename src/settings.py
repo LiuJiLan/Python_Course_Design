@@ -55,3 +55,8 @@ class Settings:
         # 输入 "True" "False"
         self.page08_allow_test_functions = "False"
         self.page08_do_not_allow_test_message = "测试功能未开启,\n请联系管理者或程序开发者"
+
+        # page09设置
+        self.page09_there_no_result = "没有找到相关信息, 可以尝试先添加信息"
+        self.page09_number_of_res_is_zero = self.page06_number_of_res_is_zero
+        self.page09_no_location_selected_message = self.page06_no_location_selected_message

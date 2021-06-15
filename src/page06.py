@@ -68,6 +68,8 @@ class Page06:
         # 返回的话要删除有关的搜索信息
         self.data_package.search_key_words = []
         self.data_package.res = []
+        self.data_package.selected_one = ""
+        self.data_package.selected_book_info = -1
         self.frame.destroy()
         from page05 import Page05
         Page05(self.screen, self.settings, self.data_package)
