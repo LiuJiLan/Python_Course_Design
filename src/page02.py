@@ -48,6 +48,7 @@ class Page02:
             tkinter.messagebox.showinfo(title="对不起", message=self.settings.page02_does_username_exist_message)
 
     def go_back(self):
+        self.data_package.flush_self_variable()
         self.frame.destroy()
         from page01 import Page01
         Page01(self.screen, self.settings, self.data_package)

@@ -45,9 +45,9 @@ class Page03:
             self.data_package.id = userId
             self.data_package.authority = combobox_return
 
-            if self.data_package.page03_does_id_exist(userId):
-                if self.data_package.page03_any_times_left(userId):
-                    if self.data_package.page03_any_times_identity_left(userId, combobox_return):
+            if self.data_package.page03_does_id_exist():
+                if self.data_package.page03_any_times_left():
+                    if self.data_package.page03_any_times_identity_left():
                         self.frame.destroy()
                         from page04 import Page04
                         Page04(self.screen, self.settings, self.data_package)

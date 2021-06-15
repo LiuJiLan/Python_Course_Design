@@ -12,7 +12,7 @@ class Page09:
         self.frame.pack(fill="both")
 
         # 控件所需信息
-        length_of_res = len(data_package.res)
+        length_of_res = len(self.data_package.res)
 
         # 所有的控件
         labelNumberOfBooks = tkinter.Label(self.frame, text="已经找到信息条数: " + str(length_of_res))

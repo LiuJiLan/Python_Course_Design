@@ -45,8 +45,11 @@ class Page04:
                 if self.is_pwd_valid():
                     self.data_package.sign_up_pwd = password
                     self.data_package.page04_complete_regist_action()
+                    self.data_package.page04_flush_times()
+                    self.data_package.flush_self_variable()
                     # 由于注册和登录是分开的, 注册中的信息用完即可销毁
                     # 此步骤已被移入self.data_package.page04_complete_regist_action()函数中
+                    # 移到单独的flush函数中
                     tkinter.messagebox.showinfo(title="谢谢", message=self.settings.page04_pwd_is_valid_message)
                     self.frame.destroy()
                     from page01 import Page01
