@@ -56,22 +56,21 @@ class Package:
 
         # 具体到一本书
         self.selected_one = ""  # 记录
-        self.selected_book_info = ()
+        self.selected_book_info = ("NULL", "NULL", "NULL")
         # (BookName, Author, BriefIntroduction)
 
         # 新信息
         self.new_one = ""  # 记录选中的书的UniqueCode(Key)
-        self.new_book_info = ()
+        self.new_book_info = ("NULL", "NULL", "NULL")
 
         # (BookName, Author, BriefIntroduction)
 
     def generate_new_unique_code(self):
-        new_unique_code = datetime.datetime.now().strftime('%Y%m%d%H%M%S%f') + str(random.randint(0, 9)) + str(
+        self.new_one = datetime.datetime.now().strftime('%Y%m%d%H%M%S%f') + str(random.randint(0, 9)) + str(
             random.randint(0, 9))
-        return new_unique_code
 
     def create_new_one(self):
-        sql = "INSERT INTO books_info (uni_code, book_name, author, brief_intro) VALUES ('{0}','{1}', '{2}', '{3}')".format(self.selected_one, self.selected_book_info[0], self.selected_book_info[1], self.selected_book_info[2])
+        sql = "INSERT INTO books_info (uni_code, book_name, author, brief_intro) VALUES ('{0}','{1}', '{2}', '{3}')".format(self.new_one, self.new_book_info[0], self.new_book_info[1], self.new_book_info[2])
         try:
             with self.connect.cursor() as cursor:
                 cursor.execute(sql)
@@ -82,7 +81,7 @@ class Package:
             pass
 
     def delete_old_one(self):
-        sql = "DELETE FROM books_info WHERE name = '{0}'".format(self.selected_one)
+        sql = "DELETE FROM books_info WHERE uni_code = '{0}'".format(self.selected_one)
         try:
             with self.connect.cursor() as cursor:
                 cursor.execute(sql)
@@ -103,9 +102,9 @@ class Package:
         self.res = []
         self.last_visited_location = -1
         self.selected_one = ""
-        self.selected_book_info = ()
+        self.selected_book_info = ("NULL", "NULL", "NULL")
         self.new_one = ""
-        self.new_book_info = ()
+        self.new_book_info = ("NULL", "NULL", "NULL")
 
     def page02_does_username_exist(self):
         sql = "SELECT * FROM user_info WHERE user_name = '{0}'".format(self.user_name)

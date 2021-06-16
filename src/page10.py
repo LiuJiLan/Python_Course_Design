@@ -31,12 +31,13 @@ class Page10:
         scrolledtextBriefIntro.config(state="disable")
 
         # 暂定放置.pack()
-        buttonSaveTextContent.pack()
-        buttonGoBack.pack()
-        labelTitle.pack()
-        labelAuthor.pack()
-        labelBriefIntro.pack()
-        scrolledtextBriefIntro.pack()
+        screen.geometry("1200x800")
+        buttonSaveTextContent.place(width=282, height=48, x=230, y=64)
+        buttonGoBack.place(width=282, height=48, x=688, y=64)
+        labelTitle.place(width=282, height=48, x=230, y=152)
+        labelAuthor.place(width=282, height=48, x=688, y=152)
+        labelBriefIntro.place(width=282, height=48, x=230, y=240)
+        scrolledtextBriefIntro.place(width=740, height=448, x=230, y=288)
 
     def save_text_content(self):
         try:

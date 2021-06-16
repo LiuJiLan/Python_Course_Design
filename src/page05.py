@@ -24,16 +24,18 @@ class Page05:
         buttonSearch = tkinter.Button(self.frame, text="查询", command=self.search_books)
 
         # 暂定放置
-        labelSearchByTitle.pack()
-        self.entrySearchByTitle.pack()
-        labelSearchByAuthor.pack()
-        self.entrySearchByAuthor.pack()
-        labelPreciseSearch.pack()
-        labelTitle.pack()
-        self.entryTitle.pack()
-        labelAuthor.pack()
-        self.entryAuthor.pack()
-        buttonSearch.pack()
+        screen.geometry("480x320")
+        # 从此处开始使用Adobe XD的数据顺序, 方便誊写
+        labelSearchByTitle.place(width=296, height=19, x=92, y=16)
+        self.entrySearchByTitle.place(width=296, height=30, x=92, y=35)
+        labelSearchByAuthor.place(width=296, height=19, x=92, y=81)
+        self.entrySearchByAuthor.place(width=296, height=30, x=92, y=100)
+        labelPreciseSearch.place(width=296, height=19, x=92, y=146)
+        labelTitle.place(width=113, height=30, x=92, y=181)
+        self.entryTitle.place(width=183, height=30, x=205, y=181)
+        labelAuthor.place(width=113, height=30, x=92, y=227)
+        self.entryAuthor.place(width=183, height=30, x=205, y=227)
+        buttonSearch.place(width=96, height=30, x=192, y=273)
 
     def search_books(self):
         self.data_package.search_key_words = []

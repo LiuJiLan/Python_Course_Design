@@ -24,15 +24,16 @@ class Page04:
         buttonGoBack = tkinter.Button(self.frame, text="返回", command=self.go_back)
 
         # 暂定放置
-        labelUserName.pack()
-        self.entryUserName.pack()
-        labelPasswordTip.pack()
-        labelPassword.pack()
-        self.entryPassword.pack()
-        labelPwdConfirm.pack()
-        self.entryPwdConfirm.pack()
-        buttonSignUp.pack()
-        buttonGoBack.pack()
+        self.screen.geometry("480x320")
+        labelUserName.place(x=92, y=24, width=113, height=38)
+        self.entryUserName.place(x=205, y=24, width=183, height=38)
+        labelPasswordTip.place(x=92, y=86, width=296, height=24)
+        labelPassword.place(x=92, y=134, width=113, height=38)
+        self.entryPassword.place(x=205, y=134, width=183, height=38)
+        labelPwdConfirm.place(x=92, y=196, width=113, height=38)
+        self.entryPwdConfirm.place(x=205, y=196, width=183, height=38)
+        buttonSignUp.place(x=92, y=258, width=113, height=38)
+        buttonGoBack.place(x=275, y=258, width=113, height=38)
 
     def handle_sign_up(self):
         self.data_package.user_name = self.entryUserName.get()

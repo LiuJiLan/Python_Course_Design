@@ -35,16 +35,16 @@ class Page12:
         scrolledtextNewBriefIntro.config(state="disable")
 
         # 暂定放置
-        labelTitle.pack()
-        labelNewTitle.pack()
-        labelAuthor.pack()
-        labelNewAuthor.pack()
-        labelBriefIntro.pack()
-        scrolledtextBriefIntro.pack()
-        labelNewBriefIntro.pack()
-        scrolledtextNewBriefIntro.pack()
-        buttonConfirmChange.pack()
-        buttonGoCancel.pack()
+        labelTitle.place(width=282, height=48, x=230, y=44)
+        labelAuthor.place(width=282, height=48, x=688, y=44)
+        labelBriefIntro.place(width=282, height=48, x=230, y=122)
+        scrolledtextBriefIntro.place(width=740, height=176, x=230, y=170)
+        labelNewTitle.place(width=282, height=48, x=230, y=376)
+        labelNewAuthor.place(width=282, height=48, x=688, y=376)
+        labelNewBriefIntro.place(width=282, height=48, x=230, y=454)
+        scrolledtextNewBriefIntro.place(width=740, height=176, x=230, y=502)
+        buttonConfirmChange.place(width=282, height=48, x=230, y=708)
+        buttonGoCancel.place(width=282, height=48, x=688, y=708)
 
     def comfirm_change(self):
         self.data_package.create_new_one()
@@ -52,8 +52,8 @@ class Page12:
         self.data_package.flush_self_variable()
         tkinter.messagebox.showinfo(title="请注意", message=self.settings.page12_finish_change)
         self.frame.destroy()
-        from page09 import Page09
-        Page09(self.screen, self.settings, self.data_package)
+        from page08 import Page08
+        Page08(self.screen, self.settings, self.data_package)
 
     def go_cancel(self):
         self.data_package.new_one = ""

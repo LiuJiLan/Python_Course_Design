@@ -26,9 +26,10 @@ class Page01:
 
         # 将所有控件摆放至frame
         # 在组员具体设计前全部使用pack
-        buttonSignIn.pack()
-        buttonSignUp.pack()
-        buttonGetLicense.pack()
+        screen.geometry("480x320")
+        buttonSignIn.place(x=92, y=47, width=296, height=58)
+        buttonSignUp.place(x=92, y=131, width=296, height=58)
+        buttonGetLicense.place(x=92, y=215, width=296, height=58)
 
     def handle_sign_in(self):
         self.frame.destroy()

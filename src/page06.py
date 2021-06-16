@@ -19,17 +19,16 @@ class Page06:
         labelNumberOfBooks = tkinter.Label(self.frame, text="已经找到信息条数: " + str(length_of_res))
         buttonViewInfo = tkinter.Button(self.frame, text="查看信息", command=self.handle_view_info)
         buttonGoBack = tkinter.Button(self.frame, text="返回", command=self.go_back)
-        frameBooksInfo = tkinter.Frame(self.frame)
-        scrollbarBooksInfo = tkinter.Scrollbar(frameBooksInfo)
-        self.listboxBooksInfo = tkinter.Listbox(frameBooksInfo, yscrollcommand=scrollbarBooksInfo.set)
+        scrollbarBooksInfo = tkinter.Scrollbar(self.frame)
+        self.listboxBooksInfo = tkinter.Listbox(self.frame, yscrollcommand=scrollbarBooksInfo.set)
 
         # 暂定放置
-        labelNumberOfBooks.pack()
-        buttonViewInfo.pack()
-        buttonGoBack.pack()
-        frameBooksInfo.pack()
-        self.listboxBooksInfo.pack(side="left", fill="both", expand=1)
-        scrollbarBooksInfo.pack(side="right", fill="y", expand=1)
+        screen.geometry("1200x800")
+        labelNumberOfBooks.place(width=280, height=48, x=230, y=64)
+        buttonViewInfo.place(width=175, height=48, x=510, y=64)
+        buttonGoBack.place(width=175, height=48, x=795, y=64)
+        self.listboxBooksInfo.place(width=725, height=560, x=230, y=176)
+        scrollbarBooksInfo.place(width=15, height=560, x=955, y=176)
 
         # 控件子设定
         # # self.listboxBooksInfo和scrollbarBooksInfo设定

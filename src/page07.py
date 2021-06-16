@@ -16,18 +16,9 @@ class Page07:
 
         # 写缓存
         self.data_package.get_selected_book_info()
-        """
-        self.book_cover_path = ""
-        temp_file_path = self.data_package.write_pic_2_temp()
-        if os.path.exists(temp_file_path):
-            self.book_cover_path = temp_file_path
-        else:
-            self.book_cover_path = self.settings.books_cover_not_temp
-        """
 
         # 所有的控件
         buttonSaveTextContent = tkinter.Button(self.frame, text="保存文字内容", command=self.save_text_content)
-        # buttonSaveBookCover = tkinter.Button(self.frame, text="保存图片", command=self.save_book_cover)
         buttonGoBack = tkinter.Button(self.frame, text="返回", command=self.go_back)
         labelTitle = tkinter.Label(self.frame, text="书名: " + "《" + self.data_package.selected_book_info[0] + "》")
         labelAuthor = tkinter.Label(self.frame, text="作者: " + self.data_package.selected_book_info[1])
@@ -40,14 +31,13 @@ class Page07:
         scrolledtextBriefIntro.config(state="disable")
 
         # 暂定放置.pack()
-        buttonSaveTextContent.pack()
-        # buttonSaveBookCover.pack()
-        buttonGoBack.pack()
-        labelTitle.pack()
-        labelAuthor.pack()
-        # labelBookCoverImage.pack()
-        labelBriefIntro.pack()
-        scrolledtextBriefIntro.pack()
+        screen.geometry("1200x800")
+        buttonSaveTextContent.place(width=282, height=48, x=230, y=64)
+        buttonGoBack.place(width=282, height=48, x=688, y=64)
+        labelTitle.place(width=282, height=48, x=230, y=152)
+        labelAuthor.place(width=282, height=48, x=688, y=152)
+        labelBriefIntro.place(width=282, height=48, x=230, y=240)
+        scrolledtextBriefIntro.place(width=740, height=448, x=230, y=288)
 
     def save_text_content(self):
         try:
@@ -59,8 +49,6 @@ class Page07:
         finally:
             pass
 
-    # def save_book_cover(self):
-    #    pass
 
     def go_back(self):
         self.frame.destroy()

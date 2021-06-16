@@ -22,20 +22,19 @@ class Page09:
         buttonChangeInfo = tkinter.Button(self.frame, text="修改信息", command=self.handle_change_info)
         buttonDeleteInfo = tkinter.Button(self.frame, text="删除信息", command=self.handle_delete_info)
         buttonGoBack = tkinter.Button(self.frame, text="返回", command=self.go_back)
-        frameBooksInfo = tkinter.Frame(self.frame)
-        scrollbarBooksInfo = tkinter.Scrollbar(frameBooksInfo)
-        self.listboxBooksInfo = tkinter.Listbox(frameBooksInfo, yscrollcommand=scrollbarBooksInfo.set)
+        scrollbarBooksInfo = tkinter.Scrollbar(self.frame)
+        self.listboxBooksInfo = tkinter.Listbox(self.frame, yscrollcommand=scrollbarBooksInfo.set)
 
         # 暂定放置
-        labelNumberOfBooks.pack()
-        buttonViewInfo.pack()
-        buttonGoBack.pack()
-        buttonAddInfo.pack()
-        buttonChangeInfo.pack()
-        buttonDeleteInfo.pack()
-        frameBooksInfo.pack()
-        self.listboxBooksInfo.pack(side="left", fill="both", expand=1)
-        scrollbarBooksInfo.pack(side="right", fill="y", expand=1)
+        screen.geometry("1200x800")
+        labelNumberOfBooks.place(width=280, height=48, x=230, y=64)
+        buttonViewInfo.place(width=175, height=48, x=510, y=64)
+        buttonGoBack.place(width=175, height=48, x=795, y=64)
+        buttonAddInfo.place(width=174, height=48, x=230, y=176)
+        buttonChangeInfo.place(width=174, height=48, x=513, y=176)
+        buttonDeleteInfo.place(width=174, height=48, x=795, y=176)
+        self.listboxBooksInfo.place(width=725, height=448, x=230, y=288)
+        scrollbarBooksInfo.place(width=15, height=448, x=955, y=288)
 
         # 控件子设定
         # # self.listboxBooksInfo和scrollbarBooksInfo设定

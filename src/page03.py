@@ -28,12 +28,13 @@ class Page03:
         self.comboboxIdentity.current(0)
 
         # 暂定放置
-        labelId.pack()
-        self.entryId.pack()
-        labelIdentity.pack()
-        self.comboboxIdentity.pack()
-        buttonGoNext.pack()
-        buttonGoBack.pack()
+        self.screen.geometry("480x320")
+        labelId.place(x=92, y=47, width=113, height=58)
+        self.entryId.place(x=205, y=47, width=183, height=58)
+        labelIdentity.place(x=92, y=131, width=113, height=58)
+        self.comboboxIdentity.place(x=205, y=131, width=183, height=58)
+        buttonGoNext.place(x=92, y=215, width=113, height=58)
+        buttonGoBack.place(x=275, y=215, width=113, height=58)
 
     def go_next(self):
         userId = self.entryId.get()
