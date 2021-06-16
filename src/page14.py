@@ -24,6 +24,7 @@ class Page14:
         self.entryNewBriefIntro = tkinter.Entry(self.frame, show=None)
 
         # 暂定放置
+        buttonConfirmAdd.pack()
         buttonGoBack.pack()
         labelNewTitle.pack()
         self.entryNewTitle.pack()
