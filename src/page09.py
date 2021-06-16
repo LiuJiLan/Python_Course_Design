@@ -1,6 +1,7 @@
 import tkinter
 import tkinter.messagebox
 
+
 class Page09:
     def __init__(self, screen, settings, data_package):
         self.screen = screen
@@ -9,7 +10,7 @@ class Page09:
         self.frame = tkinter.Frame(self.screen)
 
         self.screen.title(settings.page09_title)
-        self.frame.pack(fill="both")
+        self.frame.pack(fill="both", expand=1)
 
         # 控件所需信息
         length_of_res = len(self.data_package.res)
@@ -33,8 +34,8 @@ class Page09:
         buttonChangeInfo.pack()
         buttonDeleteInfo.pack()
         frameBooksInfo.pack()
-        self.listboxBooksInfo.pack(side="left", fill="both")
-        scrollbarBooksInfo.pack(side="right", fill="y")
+        self.listboxBooksInfo.pack(side="left", fill="both", expand=1)
+        scrollbarBooksInfo.pack(side="right", fill="y", expand=1)
 
         # 控件子设定
         # # self.listboxBooksInfo和scrollbarBooksInfo设定
@@ -55,7 +56,6 @@ class Page09:
                     pass
         scrollbarBooksInfo.config(command=self.listboxBooksInfo.yview)
 
-
     def handle_view_info(self):
         if len(self.data_package.res) == 0:
             tkinter.messagebox.showinfo(title="对不起", message=self.settings.page09_there_no_result)
@@ -69,7 +69,6 @@ class Page09:
                 self.frame.destroy()
                 from page10 import Page10
                 Page10(self.screen, self.settings, self.data_package)
-
 
     def handle_add_info(self):
         self.frame.destroy()
@@ -104,7 +103,6 @@ class Page09:
                 from page13 import Page13
                 Page13(self.screen, self.settings, self.data_package)
 
-
     def go_back(self):
         # 返回的话要删除有关的搜索信息
         self.data_package.search_key_words = []
@@ -114,4 +112,3 @@ class Page09:
         self.frame.destroy()
         from page08 import Page08
         Page08(self.screen, self.settings, self.data_package)
-

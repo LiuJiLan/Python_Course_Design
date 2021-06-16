@@ -11,7 +11,7 @@ class Page03:
         self.frame = tkinter.Frame(self.screen)
 
         self.screen.title(settings.page03_title)
-        self.frame.pack(fill="both")
+        self.frame.pack(fill="both", expand=1)
 
         # 所有的控件
         labelId = tkinter.Label(self.frame, text="学工号:")

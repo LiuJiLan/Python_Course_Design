@@ -10,7 +10,7 @@ class Page08:
         self.frame = tkinter.Frame(self.screen)
 
         self.screen.title(settings.page08_title)
-        self.frame.pack(fill="both")
+        self.frame.pack(fill="both", expand=1)
 
         # 所有的控件
         buttonShowAll = tkinter.Button(self.frame, text="显示数据库全部书本信息", command=self.show_all)

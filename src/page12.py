@@ -12,7 +12,7 @@ class Page12:
         self.frame = tkinter.Frame(self.screen)
 
         self.screen.title(settings.page12_title)
-        self.frame.pack(fill="both")
+        self.frame.pack(fill="both", expand=1)
 
         # 所有的控件
         labelTitle = tkinter.Label(self.frame, text="原书名: " + "《" + self.data_package.selected_book_info[0] + "》")

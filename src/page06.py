@@ -10,7 +10,7 @@ class Page06:
         self.frame = tkinter.Frame(self.screen)
 
         self.screen.title(settings.page06_title)
-        self.frame.pack(fill="both")
+        self.frame.pack(fill="both", expand=1)
 
         # 控件所需信息
         length_of_res = len(data_package.res)
@@ -28,8 +28,8 @@ class Page06:
         buttonViewInfo.pack()
         buttonGoBack.pack()
         frameBooksInfo.pack()
-        self.listboxBooksInfo.pack(side="left", fill="both")
-        scrollbarBooksInfo.pack(side="right", fill="y")
+        self.listboxBooksInfo.pack(side="left", fill="both", expand=1)
+        scrollbarBooksInfo.pack(side="right", fill="y", expand=1)
 
         # 控件子设定
         # # self.listboxBooksInfo和scrollbarBooksInfo设定

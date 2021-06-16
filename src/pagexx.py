@@ -9,7 +9,7 @@ class Pagexx:
         self.frame = tkinter.Frame(self.screen)
 
         self.screen.title(settings.pagexx_title)
-        self.frame.pack(fill="both")
+        self.frame.pack(fill="both", expand=1)
 
         # 所有的控件
         labelMessage = tkinter.Label(self.frame, text="这是一个测试用例")

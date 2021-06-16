@@ -1,22 +1,6 @@
 import tkinter
 
 
-
-
-"""
-from page04 import Page04
-from page05 import Page05
-from page06 import Page06
-from page07 import Page07
-from page08 import Page08
-from page09 import Page09
-from page10 import Page10
-from page11 import Page11
-from page12 import Page12
-from pagexx import Pagexx
-"""
-
-
 def run_software():
     # 函数内导包
     from settings import Settings
@@ -29,11 +13,12 @@ def run_software():
 
     # 主screen的各种设置加载
     screen.title(sbms_settings.screen_title)
-    screen.geometry("{}x{}".format(sbms_settings.screen_width, sbms_settings.screen_height))
+    screen.geometry("{}x{}+{}+{}".format(sbms_settings.screen_width, sbms_settings.screen_height, sbms_settings.screen_at_x, sbms_settings.screen_at_y))
+    screen.resizable(False, False)
     screen.configure(bg=sbms_settings.screen_bg_color)
 
-    from page08 import Page08
-    Page08(screen, sbms_settings, user_info)
+    from page01 import Page01
+    Page01(screen, sbms_settings, user_info)
 
     # 开始运行
     screen.mainloop()

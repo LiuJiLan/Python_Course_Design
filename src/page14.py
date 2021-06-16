@@ -8,7 +8,7 @@ class Page14:
         self.frame = tkinter.Frame(self.screen)
 
         self.screen.title(settings.page14_title)
-        self.frame.pack(fill="both")
+        self.frame.pack(fill="both", expand=1)
 
         # 写缓存
         self.data_package.get_selected_book_info()

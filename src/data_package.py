@@ -1,12 +1,36 @@
 import datetime
 import random
-import pymysql
+# import cryptography
+import pymysql  # 缺少cryptography包, 如有异常报错需要添加这个这个包
+
 
 
 class Package:
     def __init__(self):
-        self.connect = mysql_conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', password='Wxxsh314',
-                                                    db='pycd_sc')
+        self.connect = None
+        try:
+            self.connect = pymysql.connect(host='127.0.0.1', port=3306, user='root', password='Wxxsh314', db='pycd_sc')
+            # 此处如果链接失败会直接退出
+        except Exception as e:
+            import tkinter.messagebox
+            error_message = "与数据库链接出现以下错误: \n"
+            tkinter.messagebox.showerror(title="致命错误", message=error_message + str(e))
+            quit()
+        finally:
+            pass
+
+        """
+        if self.connect is None:
+            import tkinter
+            import tkinter.messagebox
+            temp_screen = tkinter.Tk()
+            error_message = "与数据库链接出现错误"
+            tkinter.messagebox.showerror(title="致命错误", message=error_message)
+            temp_screen.quit()
+            quit()  # 这里需要改进, quit会不给任何提示的掐掉程序
+        else:
+            pass
+            """
 
         # 注册用信息
         self.id = ""  # 学工号
@@ -45,17 +69,6 @@ class Package:
         new_unique_code = datetime.datetime.now().strftime('%Y%m%d%H%M%S%f') + str(random.randint(0, 9)) + str(
             random.randint(0, 9))
         return new_unique_code
-
-    """
-    create和delete中清除的部分应该放在外部
-        self.res = []
-        self.last_visited_location = -1
-        self.selected_one = ""
-        self.selected_book_info = ()
-        self.new_one = ""
-        self.new_book_info = ()
-        已经移到了self.`flush_self_variable()
-    """
 
     def create_new_one(self):
         sql = "INSERT INTO books_info (uni_code, book_name, author, brief_intro) VALUES ('{0}','{1}', '{2}', '{3}')".format(self.selected_one, self.selected_book_info[0], self.selected_book_info[1], self.selected_book_info[2])

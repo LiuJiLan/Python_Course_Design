@@ -9,7 +9,7 @@ class Page05:
         self.frame = tkinter.Frame(self.screen)
 
         self.screen.title(settings.page05_title)
-        self.frame.pack(fill="both")
+        self.frame.pack(fill="both", expand=1)
 
         # 所有的控件
         labelSearchByTitle = tkinter.Label(self.frame, text="根据书名查询: ")

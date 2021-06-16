@@ -10,7 +10,7 @@ class Page04:
         self.frame = tkinter.Frame(self.screen)
 
         self.screen.title(settings.page04_title)
-        self.frame.pack(fill="both")
+        self.frame.pack(fill="both", expand=1)
 
         # 所有的控件
         labelUserName = tkinter.Label(self.frame, text="用户名:")
