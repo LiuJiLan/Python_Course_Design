@@ -14,7 +14,7 @@
 - 唯一确信需要提前准备的包是`PyMySQL`和`cryptography`(后者虽没有直接使用, 但前者需要后者)
 - 这两个包下载完之后再添加`pyinstaller`
 - 如果是用虚拟环境打包的话, 也不要随便删包, 个人吃了点亏
-- 打包命令`pyinstaller src/School_Books_Management_System.py -w -i src/assets/images/icon.ico`
+- 打包命令`pyinstaller -F ./src/School_Books_Management_System.py -w -i ./src/assets/images/icon.ico`
 
 ### 有关tkinter
 - tkinter是一个Python内置的模块,至少Python官方是这么说的
