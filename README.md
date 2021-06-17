@@ -16,8 +16,12 @@
 - 个人是个用PyCharm的懒人, 似乎在安装这些包之后会多出一些其他的包, 由于平时很少导包, 几乎都是需要自己重写包的情况, 就看着PyCharm中的简介删删减减了一些, 如果漏掉了什么请帮我指出
 - 打包命令`pyinstaller src/School_Books_Management_System.py -w -i src/assets/images/icon.ico`
 
-### 关于MacOS用户
-- 原代码本地环境运行可能会遇到没有tkinter的警告, 这点在brew有所说明, `brew info python`可获得相关信息
+### 有关tkinter
+- tkinter是一个Python内置的模块,至少Python官方是这么说的
+- 但对于部分类Unix系统中Python不包含tkinter模块
+- 例如MacOS中brew就提示了这一点, `brew info python`可获得相关信息
+- 对于很多Linux系统也可以改为安装python-tk来解决
+- 对于PyCharm则是安装future package(实在不知道怎么装等PyCharm反义一会就会有提示了)
 
 ## 关于贡献者
 - 在一个全是导包的项目里提贡献者真的没有什么意义, 但毕竟这涉及到这门课分数的评定
