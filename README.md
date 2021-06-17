@@ -13,15 +13,16 @@
 - 如果你打包超过这个值可能要考虑是否存在问题(MacOS的包通常是最大的)
 - 唯一确信需要提前准备的包是`PyMySQL`和`cryptography`(后者虽没有直接使用, 但前者需要后者)
 - 这两个包下载完之后再添加`pyinstaller`
-- 个人是个用PyCharm的懒人, 似乎在安装这些包之后会多出一些其他的包, 由于平时很少导包, 几乎都是需要自己重写包的情况, 就看着PyCharm中的简介删删减减了一些, 如果漏掉了什么请帮我指出
+- 如果是用虚拟环境打包的话, 也不要随便删包, 个人吃了点亏
 - 打包命令`pyinstaller src/School_Books_Management_System.py -w -i src/assets/images/icon.ico`
 
 ### 有关tkinter
 - tkinter是一个Python内置的模块,至少Python官方是这么说的
 - 但对于部分类Unix系统中Python不包含tkinter模块
 - 例如MacOS中brew就提示了这一点, `brew info python`可获得相关信息
-- 对于很多Linux系统也可以改为安装python-tk来解决
-- 对于PyCharm则是安装future package(实在不知道怎么装等PyCharm反义一会就会有提示了)
+- 对于很多Linux系统也可以改为安装python-tk或者python-tk来解决
+- 部分Windows也没有安装这个模块,对于Windows用户去补充安装tk模块.
+- 对于PyCharm, 配置好大环境的python在PyCharm中删除虚拟环境然后重新装虚拟环境, 或者直接用系统的大环境.(因为你的虚拟环境本质上也是用大环境python建立出来的)
 
 ## 关于贡献者
 - 在一个全是导包的项目里提贡献者真的没有什么意义, 但毕竟这涉及到这门课分数的评定
