@@ -6,10 +6,10 @@ import pymysql  # 缺少cryptography包, 如有异常报错需要添加这个这
 
 
 class Package:
-    def __init__(self):
+    def __init__(self, settings):
         self.connect = None
         try:
-            self.connect = pymysql.connect(host='127.0.0.1', port=3306, user='root', password='Wxxsh314', db='pycd_sc')
+            self.connect = pymysql.connect(host=settings.host, port=settings.port, user=settings.user, password=settings.password, db=settings.db)
             # 此处如果链接失败会直接退出
         except Exception as e:
             import tkinter.messagebox

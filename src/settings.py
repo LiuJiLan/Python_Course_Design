@@ -1,6 +1,13 @@
 
 class Settings:
     def __init__(self):
+        # 服务器设置
+        self.host = '49.235.243.158'
+        self.port = 3306
+        self.user = 'pycd'
+        self.password = 'pwd123456'
+        self.db = 'pycd_sc'
+
         # 主screen设置
         self.screen_title = "Screen"
         self.screen_width = 1200
