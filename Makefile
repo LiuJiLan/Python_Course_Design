@@ -1,5 +1,5 @@
 pack:
-	pyinstaller ./src/School_Books_Management_System.py -w -i ./src/assets/images/icon.ico
+	pyinstaller -F ./src/School_Books_Management_System.py -w -i ./src/assets/images/icon.ico
 
 clean:
 	rm -rf ./build
