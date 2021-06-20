@@ -67,5 +67,7 @@ class Page04:
 
     def is_pwd_valid(self):
         pwd = self.entryPassword.get()
-        # 请组员对此内容进行补充
-        return True
+        if (len(pwd) >= 8) and (len(pwd) <= 16):
+            return True
+        else:
+            return False
