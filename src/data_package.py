@@ -4,12 +4,12 @@ import random
 import pymysql  # 缺少cryptography包, 如有异常报错需要添加这个这个包
 
 
-
 class Package:
     def __init__(self, settings):
         self.connect = None
         try:
-            self.connect = pymysql.connect(host=settings.host, port=settings.port, user=settings.user, password=settings.password, db=settings.db)
+            self.connect = pymysql.connect(host=settings.host, port=settings.port, user=settings.user,
+                                           password=settings.password, db=settings.db)
             # 此处如果链接失败会直接退出
         except Exception as e:
             import tkinter.messagebox
@@ -70,7 +70,8 @@ class Package:
             random.randint(0, 9))
 
     def create_new_one(self):
-        sql = "INSERT INTO books_info (uni_code, book_name, author, brief_intro) VALUES ('{0}','{1}', '{2}', '{3}')".format(self.new_one, self.new_book_info[0], self.new_book_info[1], self.new_book_info[2])
+        sql = "INSERT INTO books_info (uni_code, book_name, author, brief_intro) VALUES ('{0}','{1}', '{2}', '{3}')".format(
+            self.new_one, self.new_book_info[0], self.new_book_info[1], self.new_book_info[2])
         try:
             with self.connect.cursor() as cursor:
                 cursor.execute(sql)
@@ -220,7 +221,8 @@ class Package:
             auth = 0
         elif self.authority == "学生":
             auth = 1
-        sql = "INSERT INTO user_info (user_name, pwd, authority, user_id) VALUES ('{0}','{1}', '{2}', '{3}')".format(self.user_name, self.sign_up_pwd, auth, self.id)
+        sql = "INSERT INTO user_info (user_name, pwd, authority, user_id) VALUES ('{0}','{1}', '{2}', '{3}')".format(
+            self.user_name, self.sign_up_pwd, auth, self.id)
         try:
             with self.connect.cursor() as cursor:
                 cursor.execute(sql)
